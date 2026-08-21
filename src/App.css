@@ -2,24 +2,57 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: crimson;
+    background: linear-gradient(135deg, #8b1e1e, #d93d3d);
+    color: #fff;
 }
 
-.container{
+#root {
+    min-height: 100vh;
+}
+
+.page-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: rgba(0, 0, 0, 0.18);
+    padding: 24px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.app-header span {
+    color: #f9d3d3;
+    font-size: 0.95rem;
+}
+
+.container {
     width: 600px;
-    margin: 40px;
+    margin: 40px auto;
     background: rgb(140, 3, 3);
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    flex: 1;
 }
- 
+
 h1 {
     margin-bottom: 20px;
     text-align: center;
@@ -29,10 +62,9 @@ h1 {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
-
 }
 
-.formulario input{
+.formulario input {
     flex: 1;
     padding: 12px;
     border: 1px solid #f9d3d3;
@@ -42,22 +74,20 @@ h1 {
 button {
     padding: 12px 16px;
     border: none;
-    border-radius: 6;
+    border-radius: 8px;
     cursor: pointer;
-
+    font-weight: 700;
 }
 
 button:hover {
     opacity: 0.9;
-
 }
 
 .lista {
     list-style: none;
-
 }
 
-.item{
+.item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,9 +103,11 @@ button:hover {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .acoes {
-display: flex;
-color: gray;
+    display: flex;
+    gap: 8px;
+    color: gray;
 }
 
 .concluida {
@@ -85,7 +117,27 @@ color: gray;
 
 .vazio {
     text-align: center;
-
-    color: #666;
+    color: #f9d3d3;
     margin-top: 20px;
+}
+
+.app-footer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f9d3d3;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .app-footer {
+        flex-direction: column;
+        gap: 6px;
+    }
 }
