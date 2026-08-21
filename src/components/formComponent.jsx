@@ -1,4 +1,4 @@
-import ButtonComponent from "./buttonComponent"
+import ButtonComponent from "./ButtonComponent"
 
 function FormComponent({
     texto,
