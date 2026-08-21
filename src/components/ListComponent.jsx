@@ -20,4 +20,4 @@ function ListComponent({
     )
 }
 
-export default listComponent;
+export default ListComponent;
